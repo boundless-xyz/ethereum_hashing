@@ -10,6 +10,9 @@ mod sha2_impl;
 
 pub use sha2::Sha256 as Context;
 
+/// Some libraries import DynamicContext, so we re-export the static context here for compatibility.
+pub use sha2::Sha256 as DynamicContext;
+
 use sha2_impl::Sha2CrateImpl;
 
 #[cfg(feature = "zero_hash_cache")]
